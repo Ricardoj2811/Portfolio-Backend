@@ -17,26 +17,32 @@ public class Persona {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-    public Persona(Long id, String nombre, String apellido, String img) {
-        this.id = id;
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.img = img;
-    }
-
-    public Persona() {
-    }
-    
     @NotNull
     @Size(min = 1, max = 50, message = "no cumple con la longitud")
     private String nombre;
-    
     @NotNull
     @Size(min = 1, max = 50, message = "no cumple con la longitud")
     private String apellido;
-    
-    @Size(min = 1, max = 50, message = "no cumple con la longitud")
+    @NotNull
     private String img;
+    @NotNull
+    private String descripcion;
+    @NotNull
+    private String carrera;
+    private String carreraDos;
+
+
+    public Persona() {
+    }
+
+    public Persona(String nombre, String apellido, String img, String descripcion, String carrera, String carreraDos) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.img = img;
+        this.descripcion = descripcion;
+        this.carrera = carrera;
+        this.carreraDos = carreraDos;
+    }   
+    
 
 }
