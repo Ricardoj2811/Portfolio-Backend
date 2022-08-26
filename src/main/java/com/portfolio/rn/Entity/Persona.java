@@ -16,7 +16,7 @@ public class Persona {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private int id;
     @NotNull
     @Size(min = 1, max = 50, message = "no cumple con la longitud")
     private String nombre;
@@ -30,19 +30,24 @@ public class Persona {
     @NotNull
     private String carrera;
     private String carreraDos;
+    private String linkedIn;
+    private String gitHub;
+    private String correo;
 
 
     public Persona() {
     }
 
-    public Persona(String nombre, String apellido, String img, String descripcion, String carrera, String carreraDos) {
+    public Persona(String nombre, String apellido, String img, String descripcion, String carrera, String carreraDos, String linkedIn, String gitHub, String correo) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.img = img;
         this.descripcion = descripcion;
         this.carrera = carrera;
         this.carreraDos = carreraDos;
-    }   
-    
+        this.linkedIn = linkedIn;
+        this.gitHub = gitHub;
+        this.correo = correo;
+    }    
 
 }
